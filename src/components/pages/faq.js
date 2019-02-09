@@ -33,7 +33,7 @@ class Faq extends Component {
         );
     }
 }
-
+  
 const container = {
     backgroundColor: '#55555587',
     margin: 'auto',

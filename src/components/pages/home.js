@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Link, NavLink } from 'react-router-dom';
 import footerImage from '../../footerImage.png'
 import logo from '../../richoutLogo.png'
 import fbLogo from '../../facebook.png'
@@ -67,7 +65,7 @@ class Home extends Component {
                                         <button style={googleBtnStyle}><img src={googleLogo} style={{ float: 'left', height: '39px', width: '39px' }} />Connect with google</button>
                                     </form>
 
-                                    <button onClick={this.showSignup.bind(this)} style={{ background: 'transparent', border: 'none', float: 'right', height: '44px', color: '#fff', fontSize: 'x-large', fontWeight: 'bold', cursor: 'pointer' }}>Sign Up</button>
+                                    <button onClick={this.showSignup.bind(this)} className="authToggle">Sign Up</button>
                                 </div>
 
                                 <div style={contactContainer}>
@@ -115,7 +113,7 @@ class Home extends Component {
                                         </select><br /><br />
                                         <button style={btnStyle}>SIGN UP</button>
                                     </form>
-                                    <button onClick={this.showLogin.bind(this)} style={{ background: 'transparent', border: 'none', float: 'right', height: '44px', color: '#fff', fontSize: 'x-large', fontWeight: 'bold', cursor: 'pointer' }}> Login</button>
+                                    <button onClick={this.showLogin.bind(this)} className="authToggle"> Login</button>
                                 </div>
                                 <div style={{ marginBottom: '20px' }}>
                                     <div style={contactContainer}>
@@ -127,10 +125,10 @@ class Home extends Component {
                                         <div style={{ display: 'grid' }}>
                                             <p style={{ float: 'left', color: '#fff' }}>Sign up with:</p>
                                         </div>
-                                        <button style={socialSignupButton}>
+                                        <button className="socialSignupButton">
                                             <img src={roundFacebook} style={{ width: '30px', height: '30px' }} />
                                         </button>
-                                        <button style={socialSignupButton}>
+                                        <button className="socialSignupButton">
                                             <img src={roundGoogle} style={{ width: '30px', height: '30px' }} />
                                         </button>
                                     </div>
@@ -292,14 +290,7 @@ const contactContainer = {
     position: 'absolute',
     margin: '20px'
 }
-const socialSignupButton = {
-    height: '50px',
-    width: '50px',
-    marginRight: '15px',
-    borderRadius: '5px',
-    backgroundColor: '#ffffff57',
-    cursor: 'pointer'
-}
+
 const socialSignup = {
     textAlign: 'center',
 
@@ -353,19 +344,7 @@ const passwordInputStyle = {
     padding: '10px',
     fontWeight: 'bold',
 }
-const passwordMessageStyle = {
-    width: '695px',
-    height: '39px',
-    backgroundColor: '#C4C4C4',
-    border: 'none',
-    fontSize: 'large',
-    placeholder: 'Email',
-    fontFamily: 'Quantico',
-    padding: '10px',
-    fontWeight: 'bold',
-    height: '150px',
-    resize: 'none',
-}
+
 const passwordBtnStyle = {
     fontFamily: 'Quantico',
     backgroundColor: '#ffa600',

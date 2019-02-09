@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './header.css';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from './headerLogo.png'
 
 
@@ -14,16 +14,16 @@ class Header extends Component {
                     </div>
                     <div style={menuContainer}>
                         <div style={links}>
-                            <NavLink exact style={linkStyle} to="/" activeStyle={{ boxShadow: '#ffa600 0px -9px 0px -3px inset' }}>HOME</NavLink>
-                            <NavLink style={linkStyle} to="/about" activeStyle={{ boxShadow: '#ffa600 0px -9px 0px -3px inset' }}>ABOUT</NavLink>
-                            <NavLink style={linkStyle} to="/management" activeStyle={{ boxShadow: '#ffa600 0px -9px 0px -3px inset' }}>MANAGEMENT</NavLink>
-                            <NavLink style={linkStyle} to="/faq" activeStyle={{ boxShadow: '#ffa600 0px -9px 0px -3px inset' }}>FAQs</NavLink>
-                            <NavLink style={linkStyle} to="/contact" activeStyle={{ boxShadow: '#ffa600 0px -9px 0px -3px inset' }}>CONTACT US</NavLink>
+                            <NavLink exact className="nav_link" to="/" activeStyle={{ boxShadow: '#ffa600 0px -9px 0px -3px inset' }}>HOME</NavLink>
+                            <NavLink className="nav_link" to="/about" activeStyle={{ boxShadow: '#ffa600 0px -9px 0px -3px inset' }}>ABOUT</NavLink>
+                            <NavLink className="nav_link" to="/management" activeStyle={{ boxShadow: '#ffa600 0px -9px 0px -3px inset' }}>MANAGEMENT</NavLink>
+                            <NavLink className="nav_link" to="/faq" activeStyle={{ boxShadow: '#ffa600 0px -9px 0px -3px inset' }}>FAQs</NavLink>
+                            <NavLink className="nav_link" to="/contact" activeStyle={{ boxShadow: '#ffa600 0px -9px 0px -3px inset' }}>CONTACT US</NavLink>
                         </div>
                     </div>
                 </header>
             </div>
-        );
+        ); 
     }
 }
 
@@ -41,14 +41,7 @@ const menuContainer = {
     margin: 'auto'
 }
 
-const linkStyle = {
-    fontSize: 'x-large',
-    margin: '0px 40px',
-    color: '#fff',
-    textDecoration: 'none',
-    fontWeight: 'bold',
-    paddingBottom: '13px',
-}
+
 const links = {
     marginTop: '45px',
     marginBottom: '14px',
