@@ -47,7 +47,7 @@ button:focus{
 outline: 0;
 }
 a.nav_link:hover{
-  box-shadow: '#fff 0px -9px 0px -3px inset' ;
+
   cursor: pointer;
   color: #ffa600;
 }

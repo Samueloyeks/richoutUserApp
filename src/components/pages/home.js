@@ -9,6 +9,8 @@ import passwordIcon from '../../passwordIcon.png'
 import roundFacebook from '../../roundFacebook.png'
 import roundGoogle from '../../roundGoogle.png'
 import backArrow from '../../backArrow.png'
+import eyeOpen from '../../eye-open.svg'
+import eyeClosed from '../../eye-closed.svg'
 
 
 
@@ -17,6 +19,8 @@ class Home extends Component {
         login: true,
         signup: false,
         passwordReset: false,
+        passwordType: "password",
+        passwordImage: eyeOpen
     }
     showSignup() {
         this.setState({
@@ -39,7 +43,21 @@ class Home extends Component {
             passwordReset: true,
         })
     }
-   
+    togglePassword(e) {
+        e.preventDefault();
+        if (this.state.passwordType === "password") {
+            this.setState({
+                passwordType: "text",
+                passwordImage: eyeClosed
+            })
+        } else {
+            this.setState({
+                passwordType: "password",
+                passwordImage: eyeOpen
+            })
+        }
+    }
+
     render() {
         if (this.state.login) {
             return (
@@ -56,7 +74,11 @@ class Home extends Component {
                                         <input style={inputStyle} name="email" id="email" />
 
                                         <h1 style={{ color: '#fff' }}>Password</h1>
-                                        <input style={passwordStyle} name="password" id="password"></input><br /><br />
+                                        <div style={{ height: '46px', width: '100%' }}>
+                                            <input style={passwordStyle} name="password" id="password" type={this.state.passwordType}></input>
+                                            <button onClick={this.togglePassword.bind(this)} style={{ width: "10%", backgroundColor: "#c4c4c4", verticalAlign: "bottom", border: "none", padding: "5px", height: "46px" }}><img src={this.state.passwordImage} width="20px" /></button>
+                                        </div>
+                                        <br /><br />
 
                                         <button style={btnStyle}>LOGIN</button>
 
@@ -104,8 +126,10 @@ class Home extends Component {
                                         <input style={inputStyle} name="email" id="email" />
 
                                         <h1 style={{ color: '#fff' }}>Password</h1>
-                                        <input style={inputStyle} name="password" id="password"></input>
-
+                                        <div style={{ height: '46px', width: '100%' }}>
+                                            <input style={passwordStyle} name="password" id="password" type={this.state.passwordType}></input>
+                                            <button onClick={this.togglePassword.bind(this)} style={{ width: "10%", backgroundColor: "#c4c4c4", verticalAlign: "bottom", border: "none", padding: "5px", height: "46px" }}><img src={this.state.passwordImage} width="20px" /></button>
+                                        </div>
                                         <h1 style={{ color: '#fff' }}>Account Type</h1>
                                         <select style={inputStyle} name="acctType" id="acctType">
                                             <option selected>Donor</option>
@@ -144,9 +168,9 @@ class Home extends Component {
                 <div>
                     <React.Fragment>
                         <div style={passwordContainer}>
-                        <div style={backArrowContainer}>
-                            <button onClick={this.showLogin.bind(this)} style={{backgroundColor:'transparent',border:'none',cursor:'pointer'}}><img src={backArrow} style={{width:'60px',height:'43px'}}/></button>
-                        </div>
+                            <div style={backArrowContainer}>
+                                <button onClick={this.showLogin.bind(this)} style={{ backgroundColor: 'transparent', border: 'none', cursor: 'pointer' }}><img src={backArrow} style={{ width: '60px', height: '43px' }} /></button>
+                            </div>
 
                             <div style={passwordInnerContainer}>
                                 <div style={passwordHeadingContainer}>
@@ -237,7 +261,7 @@ const inputStyle = {
 
 }
 const passwordStyle = {
-    width: '100%',
+    width: '90%',
     backgroundColor: '#C4C4C4',
     border: 'none',
     fontSize: 'large',
@@ -354,15 +378,15 @@ const passwordBtnStyle = {
     boxShadow: '#3333339e 0px 7px 2px -3px',
     fontSize: 'large',
     fontWeight: 'bold',
-    cursor:'pointer'
+    cursor: 'pointer'
 }
-const backArrowContainer={
-    top:'0',
-    left:'0',
-    float:'left',
-    display:'inline-block',
-    paddingLeft:'20px',
-    paddingTop:'20px'
+const backArrowContainer = {
+    top: '0',
+    left: '0',
+    float: 'left',
+    display: 'inline-block',
+    paddingLeft: '20px',
+    paddingTop: '20px'
 }
 
 export default Home;
