@@ -1,32 +1,47 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: myRoboto;
+  src: url("../src/components/layout/fonts/myRoboto");
+  /* src:url("https://fonts.googleapis.com/css?family=Roboto"); */
+}
+@font-face {
+  font-family: Quantico;
+  src: url("../src/components/layout/fonts/Quantico");
+  /* src:url("https://fonts.googleapis.com/css?family=Roboto"); */
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+*{
+  box-sizing: border-box;
+  margin: 0;
+padding:0;
+font-family: Quantico
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+html{
+  height: 100%;
+  background-image: url("./teamwork2.jpeg");
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
 }
 
-.App-link {
-  color: #61dafb;
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a{
+  color:#333;
+  text-decoration: none;
+}
+
+.container{
+  padding: 0 1rem;
+}
+
+button{
+  cursor: pointer;
+}
+button:focus{
+outline: 0;
 }
